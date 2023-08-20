@@ -14,7 +14,7 @@ services:
 startup: {type: form, module: LogIn}
 package_name: A_Inventory_app
 allow_embedding: false
-name: Clone of A finished App
+name: A finished App playground
 runtime_options:
   version: 2
   client_version: '3'
