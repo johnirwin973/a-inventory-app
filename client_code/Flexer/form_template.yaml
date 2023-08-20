@@ -1,0 +1,11 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<style>\n  .flexer {\n    display:flex;\n    flex-wrap: wrap;\n\
+      \  }\n  \n  .flexer > * {\n    width: 32%;\n    margin-right: 1%;\n    margin-bottom:\
+      \ 1%;\n  }\n  \n  /* Responsive on smaller screens */\n  @media(max-width:640px)\
+      \ {\n    .flexer > * {\n      width: 100%;\n    }\n  }\n</style>\n\n<div class='flexer'>\n\
+      \  <div anvil-slot-repeat='default' class='anvil-role-card'></div>\n</div>"}
+components: []
+is_package: true
+custom_component: true

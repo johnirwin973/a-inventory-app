@@ -1,0 +1,59 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"KRNLXY":45,"AUMGPW":15}'}
+  name: card_1
+  layout_properties:
+    col_widths: {}
+    grid_position: FKKHTX,MQMCSM
+  components:
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Search Items Here,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: search_box
+    layout_properties:
+      col_widths: {}
+      grid_position: KBNAXG,KRNLXY
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: SEARCH, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: search_button
+    layout_properties:
+      col_widths: {}
+      grid_position: KBNAXG,AUMGPW
+    event_bindings: {click: search_button_click}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: GUADRL, title: Category, data_key: Category, $$hashKey: 'object:199648'}
+      - {id: OGYIDA, title: Description, data_key: Description, $$hashKey: 'object:199649'}
+      - {id: QQVGTY, title: Item Number, data_key: Item_number, $$hashKey: 'object:199650'}
+      - {id: SJFHCJ, title: Cost, data_key: Cost, $$hashKey: 'object:199651'}
+      - {id: GMDJMA, title: Quantity, data_key: Quantity, $$hashKey: 'object:199652'}
+      - {id: USSPFT, title: Total, data_key: Total, $$hashKey: 'object:199653'}
+      - {id: ERQEQA, title: Stock Limit, data_key: column_1, $$hashKey: 'object:215269'}
+      - {id: PCIQUU, title: '', data_key: column_2, $$hashKey: 'object:220298'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 10
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'ETCEOX,JWQWHT'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Tri_Laser.Row_Tri}
+      name: repeating_panel_1
+      layout_properties: {}
+is_package: true

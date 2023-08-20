@@ -1,0 +1,158 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"BKPDQS":10,"DJLQOR":50,"WTDXSO":15,"ZWFZEI":45,"KJORRQ":15,"CMCLKM":45,"AVQYST":15,"WKFEVU":45,"PXJJYX":15,"ADBPRB":45,"SBTQAM":15,"UYWFQU":45}'}
+  name: card_1_copy
+  layout_properties:
+    col_widths: {}
+    grid_position: RWUANT,QHWTII
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: ORSCNA Literature Order Form, font_size: 20, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'TFKURN,JRKZRE'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: date_label
+    layout_properties: {grid_position: 'BZAYXQ,BKPDQS'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'BZAYXQ,DJLQOR'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: ' NAME:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'JZAUZU,WTDXSO'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: name_box
+    layout_properties: {grid_position: 'JZAUZU,ZWFZEI'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'AREA NAME:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'AQBXTM,KJORRQ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: area_name
+    layout_properties: {grid_position: 'AQBXTM,CMCLKM'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'SHIPPING ADDRESS:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'XLXDVO,AVQYST'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: shipping_address
+    layout_properties: {grid_position: 'XLXDVO,WKFEVU'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'E-MAIL ADDRESS:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'NFMOEB,PXJJYX'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: email_box
+    layout_properties: {grid_position: 'NFMOEB,ADBPRB'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'PHONE NUMBER:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'WVEBKH,SBTQAM'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: phone_box
+    layout_properties: {grid_position: 'WVEBKH,UYWFQU'}
+    data_bindings: []
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"JOVRRU":50,"BIHEHH":10}'}
+  name: card_1
+  layout_properties: {grid_position: 'GCITEA,FAOPTW'}
+  components:
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: LMUZEE, title: Description, data_key: Description, $$hashKey: 'object:441299'}
+      - {id: FWMUIF, title: Item Number, data_key: Item_number, $$hashKey: 'object:441300'}
+      - {id: ULJRLL, title: Cost, data_key: Cost, $$hashKey: 'object:441301'}
+      - {id: UYCPTV, title: Quantity, data_key: quantity_difference, $$hashKey: 'object:441306'}
+      - {id: SDJXEI, title: Subtotal, data_key: subtotal, $$hashKey: 'object:441307'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 200
+      visible: true
+      wrap_on: never
+      show_page_controls: false
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'IMKRRF,WZRXOA'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Reorder_pdf.RowTemplate12}
+      name: repeating_panel_1
+      layout_properties: {}
+    data_bindings:
+    - {property: tag, code: 'self.item[''Inventory'']'}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Total:', font_size: 16, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2_copy
+    layout_properties:
+      col_widths: {}
+      grid_position: VATEIG,JOVRRU
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 16, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: sales_total
+    layout_properties:
+      col_widths: {}
+      grid_position: VATEIG,BIHEHH
+    data_bindings: []
+is_package: true

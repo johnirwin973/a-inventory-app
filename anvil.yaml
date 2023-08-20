@@ -1,0 +1,167 @@
+correct_dependency_ids: {}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {enable_v2: true}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, allow_remember_me: true, remember_me_days: 365}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: LogIn}
+package_name: A_Inventory_app
+allow_embedding: false
+name: Clone of A finished App
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: {base: python310-minimal}
+startup_form: null
+db_schema:
+  users:
+    title: Users
+    client: full
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: admin
+      admin_ui: {width: 200}
+      type: bool
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: remembered_logins
+      admin_ui: {width: 200}
+      type: simpleObject
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: name
+      admin_ui: {order: -1, width: 200}
+      type: string
+    - name: homegroup
+      admin_ui: {order: -0.5, width: 200}
+      type: string
+    - name: city
+      admin_ui: {order: -0.75, width: 200}
+      type: string
+    - name: phone
+      admin_ui: {order: -0.375, width: 200}
+      type: string
+    - name: upload_privileges
+      admin_ui: {order: -3, width: 200}
+      type: bool
+  inventory:
+    title: Inventory
+    client: full
+    server: full
+    columns:
+    - name: Category
+      admin_ui: {width: 91}
+      type: string
+    - name: Description
+      admin_ui: {width: 144}
+      type: string
+    - name: Item_number
+      admin_ui: {}
+      type: string
+    - name: Cost
+      admin_ui: {}
+      type: string
+    - name: Quantity
+      admin_ui: {width: 200}
+      type: number
+    - name: Total
+      admin_ui: {width: 200}
+      type: string
+    - name: Images
+      admin_ui: {order: 7, width: 200}
+      type: media
+    - name: Year
+      admin_ui: {order: 4.5, width: 200}
+      type: number
+    - name: stock_limit
+      admin_ui: {order: 8, width: 200}
+      type: number
+    - name: quantity_difference
+      admin_ui: {order: 9, width: 200}
+      type: number
+    - name: subtotal
+      admin_ui: {order: 10, width: 200}
+      type: string
+  orders:
+    client: full
+    server: full
+    columns:
+    - name: User
+      admin_ui: {order: 0, width: 200}
+      type: link_single
+      target: users
+    - name: Description
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: Cost
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: Item_Number
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: Quantity
+      admin_ui: {order: 4, width: 200}
+      type: number
+    - name: subtotal
+      admin_ui: {order: 5, width: 200}
+      type: string
+    title: Orders
+  admin:
+    client: full
+    server: full
+    columns:
+    - name: name
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: area_name
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: shipping_address
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: email
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: phone
+      admin_ui: {order: 4, width: 200}
+      type: string
+    title: admin
+  database:
+    client: none
+    server: full
+    columns:
+    - name: HomeGroup_orders
+      admin_ui: {order: 0, width: 200}
+      type: media
+    - name: Area_orders
+      admin_ui: {order: 1, width: 200}
+      type: media
+    title: DataBase

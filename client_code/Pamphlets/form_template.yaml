@@ -1,0 +1,60 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"TLFEQI":45,"XKHNHZ":15}'}
+  name: card_1
+  layout_properties: {grid_position: 'LGQVQG,LSHBFZ'}
+  components:
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Search Items Here,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: search_box
+    layout_properties:
+      col_widths: {}
+      grid_position: UMNAXR,TLFEQI
+    event_bindings: {}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: SEARCH, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: search_button
+    layout_properties:
+      col_widths: {}
+      grid_position: UMNAXR,XKHNHZ
+    event_bindings: {click: search_button_click}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: GITJBE, title: Description, data_key: Description, $$hashKey: 'object:66947'}
+      - {id: ZXOYAB, title: Item No, data_key: Item_number, $$hashKey: 'object:66948'}
+      - {id: NFPJGU, title: Cost, data_key: Cost, $$hashKey: 'object:66949'}
+      - {id: MSFMUR, title: Quantity, data_key: Quantity, $$hashKey: 'object:66950'}
+      - {id: WZCAGL, title: Total, data_key: Total, $$hashKey: 'object:66951'}
+      - {id: DLATMI, title: Stock Limit, data_key: stock_limit, $$hashKey: 'object:116555'}
+      - {id: MULNET, title: '', data_key: column_1, $$hashKey: 'object:10926'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 10
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'MMOBSB,VFYTYB'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Pamphlets.RowTemplate5}
+      name: repeating_panel_4
+      layout_properties: {}
+      data_bindings: []
+is_package: true

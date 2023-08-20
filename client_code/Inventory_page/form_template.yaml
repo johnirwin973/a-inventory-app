@@ -1,0 +1,76 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: never, col_spacing: medium, spacing_above: small, col_widths: '{}', spacing_below: small,
+    background: ''}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"CSRJEI":60,"ASSMLE":10,"JUMCEL":10}'}
+  name: card_2
+  layout_properties: {grid_position: 'DKKBDJ,PWIZWU'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Instock Items, font_size: 16, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties:
+      col_widths: {}
+      grid_position: QXDHFF,IBDABO
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: ODXVNM, title: Category, data_key: Category, $$hashKey: 'object:6423'}
+      - {id: OLEYAL, title: Description, data_key: Description, $$hashKey: 'object:6424'}
+      - {id: XHCQQI, title: Item No, data_key: Item_number, $$hashKey: 'object:6425'}
+      - {id: RWWYLU, title: Cost, data_key: Cost, $$hashKey: 'object:6426'}
+      - {id: PWYXHB, title: Quantity, data_key: Quantity, $$hashKey: 'object:6427'}
+      - {id: AFXAWK, title: Total, data_key: Total, $$hashKey: 'object:6428'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_2
+    layout_properties: {grid_position: 'APFNME,FTJJFE'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Inventory_page.RowTemplate1}
+      name: rp_reorder_list
+      layout_properties: {}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: download, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:download'}
+    name: download_button
+    layout_properties:
+      col_widths: {}
+      grid_position: OSHNBU,CSRJEI
+    event_bindings: {click: download_button_click}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Total:', font_size: 16, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties:
+      col_widths: {}
+      grid_position: OSHNBU,JUMCEL
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: sales_total
+    layout_properties: {grid_position: 'OSHNBU,ASSMLE'}
+    data_bindings: []
+is_package: true

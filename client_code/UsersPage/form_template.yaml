@@ -1,0 +1,107 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"AYKQXA":30,"IWMUBS":30}'}
+  name: card_1
+  layout_properties:
+    col_widths: {}
+    grid_position: SXFTOV,ELEYXQ
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: GSR NAME, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'JZAUZU,WTDXSO'}
+  - type: TextBox
+    properties: {}
+    name: name_box
+    layout_properties: {grid_position: 'JZAUZU,ZWFZEI'}
+    data_bindings:
+    - {property: text, code: 'self.item[''users''][''name'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: CITY, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'AQBXTM,KJORRQ'}
+  - type: TextBox
+    properties: {}
+    name: city_box
+    layout_properties: {grid_position: 'AQBXTM,CMCLKM'}
+    data_bindings:
+    - {property: text, code: 'self.item[''users''][''city'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: HOME GROUP, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'XLXDVO,AVQYST'}
+  - type: TextBox
+    properties: {}
+    name: homegroup_box
+    layout_properties: {grid_position: 'XLXDVO,WKFEVU'}
+    data_bindings:
+    - {property: text, code: 'self.item[''users''][''homegroup'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: E-MAIL ADDRESS, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'NFMOEB,PXJJYX'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: email_box
+    layout_properties: {grid_position: 'NFMOEB,ADBPRB'}
+    data_bindings:
+    - {property: text, code: 'self.item[''users''][''email'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: PHONE NUMBER, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'WVEBKH,SBTQAM'}
+  - type: TextBox
+    properties: {}
+    name: phone_box
+    layout_properties: {grid_position: 'WVEBKH,UYWFQU'}
+    data_bindings:
+    - {property: text, code: 'self.item[''users''][''phone_'']', writeback: true}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'IPOXVW,YGIQSD'}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Back, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'YVJOSY,AYKQXA'}
+    event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: SUBMIT ORDER, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: sub_button
+    layout_properties: {grid_position: 'YVJOSY,IWMUBS'}
+    event_bindings: {click: sub_button_click}
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '#e21212',
+    visible: false, text: Error Message, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_error
+  layout_properties:
+    col_widths: {}
+    grid_position: VFIXNO,GLQZLA
+is_package: true

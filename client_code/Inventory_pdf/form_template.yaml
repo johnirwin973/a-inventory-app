@@ -1,0 +1,96 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"QGSVHH":40,"OPJHER":60,"QZYYAB":10,"LMNFAB":10}'}
+    name: card_1
+    layout_properties: {grid_position: 'XIJVPS,FGMVMP'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Instock Items, font_size: 16, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'NSFXHT,ITRMBE'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: date_label
+      layout_properties: {grid_position: 'NQESPA,UDFXKY', slot: default}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'NQESPA,OPJHER'}
+    - type: DataGrid
+      properties:
+        role: null
+        columns:
+        - {id: NTWASK, title: Category, data_key: Category, $$hashKey: 'object:170733',
+          width: '90'}
+        - {id: RNPIQC, title: Description, data_key: Description, $$hashKey: 'object:170734',
+          width: '250'}
+        - {id: GMEDPO, title: Item Number, data_key: Item_number, $$hashKey: 'object:170735',
+          width: '130'}
+        - {id: BQJEAZ, title: Cost, data_key: Cost, $$hashKey: 'object:170736', width: '80'}
+        - {id: AQIMJS, title: Quantity, data_key: Quantity, $$hashKey: 'object:170737',
+          width: '75'}
+        - {id: AHKTBI, title: Total, data_key: Total, $$hashKey: 'object:170738'}
+        auto_header: true
+        tooltip: ''
+        border: ''
+        foreground: ''
+        rows_per_page: 200
+        visible: true
+        wrap_on: never
+        show_page_controls: false
+        spacing_above: small
+        spacing_below: small
+        background: ''
+      name: data_grid_1
+      layout_properties: {grid_position: 'VLKTDC,NUWSLJ'}
+      components:
+      - type: RepeatingPanel
+        properties: {spacing_above: none, spacing_below: none, item_template: Inventory_pdf.RowTemplate2}
+        name: repeating_panel_1
+        layout_properties: {}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'NQPWUP,QGSVHH'}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Total:', font_size: 16, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'NQPWUP,QZYYAB'}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: 16, font: '', spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: true, underline: false,
+        icon: ''}
+      name: sales_total
+      layout_properties: {grid_position: 'NQPWUP,LMNFAB'}
+      data_bindings: []
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components: []
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: GHASC INVENTORY, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {slot: title}

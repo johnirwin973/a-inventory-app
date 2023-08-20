@@ -1,0 +1,41 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: item_number_label
+  layout_properties: {column: KTDXLR}
+  data_bindings:
+  - {property: text, code: 'self.item[''Item_number'']'}
+- type: Label
+  properties: {}
+  name: subtotal_label
+  layout_properties: {column: JGFLAO}
+  data_bindings:
+  - {property: text, code: 'self.item[''Total'']'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: Quantity_box
+  layout_properties: {column: ZPGZDK}
+  data_bindings:
+  - {property: text, code: 'self.item[''Quantity'']', writeback: true}
+- type: Button
+  properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: update, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: update_button
+  layout_properties: {column: OWHQDT}
+  event_bindings: {click: update_button_click}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: stock_limit_box
+  layout_properties: {column: OOMAKU}
+  data_bindings:
+  - {property: text, code: 'self.item[''stock_limit'']', writeback: true}
+is_package: true

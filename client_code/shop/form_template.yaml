@@ -1,0 +1,35 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"MZMIMX":50,"HUANUC":10}'}
+components:
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter text or item number here,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: search_box
+  layout_properties:
+    col_widths: {}
+    grid_position: YYXZOD,MZMIMX
+- type: Button
+  properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Search, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: Search_button
+  layout_properties:
+    col_widths: {}
+    grid_position: YYXZOD,HUANUC
+  event_bindings: {click: Search_button_click}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: IWVYOY,NKECJT
+  components:
+  - type: form:Flexer
+    properties: {}
+    name: flexer_1
+    layout_properties: {grid_position: 'ZGTGLD,OCFPOR'}
+is_package: true

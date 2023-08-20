@@ -1,0 +1,54 @@
+container:
+  type: DataRowPanel
+  event_bindings: {}
+components:
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: Quantity_box
+  layout_properties: {column: AMEIFS}
+  data_bindings:
+  - {property: text, code: 'self.item[''Quantity'']', writeback: true}
+- type: Label
+  properties: {}
+  name: subtotal_label
+  layout_properties: {column: DURUKB}
+  data_bindings:
+  - {property: text, code: 'self.item[''subtotal'']'}
+- type: Label
+  properties: {}
+  name: item_number_label
+  layout_properties: {column: WMWFHR}
+  data_bindings:
+  - {property: text, code: 'self.item[''Item_Number'']'}
+- type: Label
+  properties: {}
+  name: price_label
+  layout_properties: {column: ZGNOVV}
+  data_bindings:
+  - {property: text, code: 'self.item[''Cost'']'}
+- type: Label
+  properties: {}
+  name: description_label
+  layout_properties: {column: ZLNTHX}
+  data_bindings:
+  - {property: text, code: 'self.item[''Description'']'}
+- type: Button
+  properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: update, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: update_button
+  layout_properties: {column: TBBDOX}
+  event_bindings: {click: update_button_click}
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Delete, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: delete_button
+  layout_properties: {column: TBBDOX}
+  event_bindings: {click: delete_button_click}
+is_package: true

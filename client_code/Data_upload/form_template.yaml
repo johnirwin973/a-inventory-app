@@ -1,0 +1,363 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_2
+  layout_properties:
+    col_widths: {}
+    grid_position: ZAVTEW,BCWNUW
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Full INVENTORY CSV FILE UPLOAD, font_size: 20, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'VRBERL,CLXWTT'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: only with privileges will upload button be available, font_size: 12,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_10
+    layout_properties:
+      col_widths: {}
+      grid_position: LVGKVO,TJPLFO
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Upload full list
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: full_inventory
+    layout_properties: {grid_position: 'WBZOAN,HGPZGS'}
+    event_bindings: {change: full_inventory_change}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_3
+  layout_properties:
+    col_widths: {}
+    grid_position: ZAVTEW,HULGZH
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Update Prices only ', font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'GGFRGC,BPLSVV'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: only with privileges will upload button be available, font_size: 12,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_10_copy
+    layout_properties:
+      col_widths: {}
+      grid_position: PHKJVW,NXXMNY
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Upload prices only
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: update_prices
+    layout_properties: {grid_position: 'SLYLXI,OFZNNL'}
+    event_bindings: {change: update_prices_change}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"YSMTQW":60,"ZLSLUD":7,"XBHRSN":10}'}
+  name: card_5
+  layout_properties:
+    col_widths: {}
+    grid_position: QFYOHF,CUVTDJ
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Delete item, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_1_copy
+    layout_properties:
+      col_widths: {}
+      grid_position: HQZKPI,DJLHJH
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Item Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: Delete_item_box
+    layout_properties: {column: null, grid_position: 'OZDFNJ,YSMTQW'}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: find, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: find_button
+    layout_properties: {grid_position: 'OZDFNJ,XBHRSN'}
+    event_bindings: {click: find_button_click}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: BSDZRR, title: Category, data_key: Category, $$hashKey: 'object:1589'}
+      - {id: WYPEDN, title: Description, data_key: Description, $$hashKey: 'object:1590'}
+      - {id: UPSXPX, title: Item Number, data_key: Item_number, $$hashKey: 'object:1591'}
+      - {id: ADGJHA, title: Cost, data_key: Cost, $$hashKey: 'object:1592'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 1
+      visible: true
+      wrap_on: never
+      show_page_controls: false
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'OKITYY,QUYPIK'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Data_upload.RowTemplate8}
+      name: repeating_panel_1
+      layout_properties: {}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Delete, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: delete_button
+    layout_properties: {grid_position: 'OKITYY,ZLSLUD'}
+    event_bindings: {click: delete_button_click}
+  data_bindings:
+  - {property: tag, code: 'self.item[''inventory'']'}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_4
+  layout_properties:
+    col_widths: {}
+    grid_position: RQQBLS,AWVIKM
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '#e21212',
+      visible: false, text: Error Message, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_error_2
+    layout_properties:
+      col_widths: {}
+      grid_position: HYLBUW,XUXHAR
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Update image, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_9
+    layout_properties: {grid_position: 'FRCFCJ,JERDHM'}
+  - type: Image
+    properties: {height: 67}
+    name: image_2
+    layout_properties: {grid_position: 'TJXIVZ,OVDJMA'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter Item number here,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: image_number
+    layout_properties: {grid_position: 'ERDUPD,ABRABJ'}
+  - type: FileLoader
+    properties: {}
+    name: image_update
+    layout_properties: {grid_position: 'JAYYXC,ZQNEON'}
+    event_bindings: {change: image_update_change}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update image, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: update_image
+    layout_properties: {grid_position: 'YUZCXJ,CNBMXS'}
+    event_bindings: {click: update_image_click}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_1
+  layout_properties:
+    col_widths: {}
+    grid_position: GXLXXU,ECDTYS
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '#e21212',
+      visible: false, text: Error Message, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_error
+    layout_properties:
+      col_widths: {}
+      grid_position: IFJGTH,CNPGXH
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Add new item to list, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'MYCFEM,HOAIYL'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Category, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_8
+    layout_properties: {grid_position: 'PAJESZ,SGYYUM'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select Category
+      border: ''
+      enabled: true
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down
+    layout_properties: {grid_position: 'PAJESZ,YALVFZ'}
+    event_bindings: {change: drop_down_change}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'SYYYPT,KOABDU'}
+  - type: TextBox
+    properties: {}
+    name: description_box
+    layout_properties: {grid_position: 'SYYYPT,SJHUKL'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Item Number, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'ANRHWH,NXOYLS'}
+  - type: TextBox
+    properties: {}
+    name: item_number
+    layout_properties: {grid_position: 'ANRHWH,LLZFIT'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Cost, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'EOTXWV,INXDGA'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: cost_box
+    layout_properties: {grid_position: 'EOTXWV,MJSAKO'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Image, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'UEJNLQ,MBJMBP'}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Upload image
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: image_upload
+    layout_properties: {grid_position: 'UEJNLQ,TMZLWN'}
+    event_bindings: {change: image_upload_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'CQCZJZ,NWQNFQ'}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: original_size, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: right}
+    name: image_1
+    layout_properties: {grid_position: 'CQCZJZ,URSWAP'}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: add to inventory, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: add_to_inventory_button
+    layout_properties: {grid_position: 'MKXBUZ,RCQPPF'}
+    event_bindings: {click: add_to_inventory_button_click}
+is_package: true

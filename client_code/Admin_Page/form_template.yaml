@@ -1,0 +1,35 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: Select Inventory Page
+    border: ''
+    enabled: true
+    foreground: theme:Primary 500
+    items: ['']
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
+  name: drop_down
+  layout_properties: {grid_position: 'GEFAMU,XIJPFS'}
+  event_bindings: {change: drop_down_change}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: HTOQGB,ZBFAVZ
+  components: []
+is_package: true

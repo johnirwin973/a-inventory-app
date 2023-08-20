@@ -1,0 +1,81 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_1
+  layout_properties:
+    col_widths: {}
+    grid_position: QADORT,TPROTT
+  components:
+  - type: Image
+    properties: {role: background-color, vertical_align: center, height: '200', tooltip: '',
+      border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties:
+      col_widths: {}
+      grid_position: KFNIZS,MDFESJ
+    data_bindings:
+    - {property: source, code: 'self.item[''Images'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '#0c74e4',
+      visible: true, text: Error Message, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_error
+    layout_properties:
+      col_widths: {}
+      grid_position: CURNVX,ABDORL
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 20, font: F, spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: description_label
+    layout_properties:
+      col_widths: {}
+      grid_position: RWDGUH,MTVJUV
+    data_bindings:
+    - {property: text, code: 'self.item[''Description'']'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: f, spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: Item_number_label
+    layout_properties:
+      col_widths: {}
+      grid_position: QGUCEL,UUITUK
+    data_bindings:
+    - {property: text, code: 'self.item[''Item_number'']'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: f, spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: price_label
+    layout_properties:
+      col_widths: {}
+      grid_position: ZABRHC,VJYTNP
+    data_bindings:
+    - {property: text, code: 'self.item[''Cost'']'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Quantity,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: f, spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false}
+    name: shop_quantity_box
+    layout_properties:
+      col_widths: {}
+      grid_position: JIZPUY,VNRIWX
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Add, font_size: 16, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: add_to_cart
+    layout_properties:
+      col_widths: {}
+      grid_position: ZVFOFL,GCQOCS
+    event_bindings: {click: add_to_cart_click}
+is_package: true

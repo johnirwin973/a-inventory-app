@@ -1,0 +1,75 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"TVDNVJ":40,"JGNYVI":10}'}
+  name: card_1
+  layout_properties:
+    col_widths: {}
+    grid_position: AEJJND,XRAKZF
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Primary
+        700', visible: true, text: Order Summary, font_size: 20, font: Yeseva One,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'WAZXOY,PLVYGJ'}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: ZLNTHX, title: Description, data_key: Description, $$hashKey: 'object:14442'}
+      - {id: ZGNOVV, title: Cost, data_key: Cost, $$hashKey: 'object:14443'}
+      - {id: WMWFHR, title: Item Number, data_key: Item_number, $$hashKey: 'object:14444'}
+      - {id: AMEIFS, title: Quantity, data_key: Quantity, $$hashKey: 'object:14445',
+        width: 124, expand: false}
+      - {id: DURUKB, title: Subtotal, data_key: Subtotal, $$hashKey: 'object:14446'}
+      - {id: TBBDOX, title: '', data_key: column_1, $$hashKey: 'object:36402'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'WZLVQH,DSVHLC'}
+    components:
+    - type: RepeatingPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
+        visible: true, spacing_above: none, spacing_below: none, item_template: Cart.RowTemplate9,
+        background: ''}
+      name: repeating_panel_1
+      layout_properties: {}
+      data_bindings:
+      - {property: items, code: 'self.item[''orders'']'}
+    data_bindings: []
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Total:', font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'AGXTQK,TVDNVJ'}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: total_label
+    layout_properties: {grid_position: 'AGXTQK,JGNYVI'}
+    data_bindings: []
+    event_bindings: {}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Continue to Checkout, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: 'fa:lock'}
+    name: continue_button
+    layout_properties: {grid_position: 'JTIBJO,YBCJOD'}
+    event_bindings: {click: continue_button_click}
+is_package: true
