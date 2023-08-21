@@ -14,10 +14,10 @@ class Data_upload(Data_uploadTemplate):
     has_privileges = anvil.server.call('check_privileges')
     if not has_privileges:
         self.full_inventory.visible = False
-        self.update_prices.visible = False
+        
     else:
         self.full_inventory.visible = True
-        self.update_prices.visible = True
+        
     self.drop_down.items = ["Books", "Booklets", "Pamphlets", "Key Tags", "Chips", "Medallions",
                                 "Service Items", "Specialty Items", "Multimedia Products",
                                 "Tri Plate Laser", "Etched Medallions"]

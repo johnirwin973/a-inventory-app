@@ -62,9 +62,9 @@ components:
   components:
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Update Prices only ', font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+      visible: true, text: 'Update Prices, Quantity & Stock limit', font_size: 20,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'GGFRGC,BPLSVV'}
   - type: Label
@@ -88,7 +88,7 @@ components:
       files: []
       foreground: ''
       visible: true
-      text: Upload prices only
+      text: Upload CSV file
       font_size: null
       font: ''
       spacing_above: small

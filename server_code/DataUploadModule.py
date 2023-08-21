@@ -35,6 +35,7 @@ def import_csv(file):
                     app_tables.inventory.add_row(**row_data)
 
 
+
 @anvil.server.callable
 def update_prices(file):
     with anvil.media.TempFile(file) as temp_file:
@@ -42,15 +43,41 @@ def update_prices(file):
             csv_data = f.readlines()
             rows = [row.strip().split(",") for row in csv_data]
             column_headers = rows[0]
-            item_number_column = "Item_number"  
-            cost_column = "Cost"  
-            data_dict = {row_data[column_headers.index(item_number_column)]: row_data[column_headers.index(cost_column)] for row_data in rows[1:]}  
+            item_number_column = "Item_number"
+            cost_column = "Cost"
+            quantity_column = "Quantity"
+            stock_limit_column = "stock_limit"  # New stock_limit column name
+            
+            def preprocess_cost(cost_str):
+                return cost_str.replace('$', '')  # Remove '$'
+            
+            def preprocess_quantity(quantity_str):
+                return int(quantity_str) if quantity_str else 0  # Convert to int, handle empty strings
+            
+            def preprocess_stock_limit(limit_str):
+                return int(limit_str) if limit_str else 0  # Convert to int, handle empty strings
+            
+            data_dict = {row_data[column_headers.index(item_number_column)]: {
+                cost_column: preprocess_cost(row_data[column_headers.index(cost_column)]),
+                quantity_column: preprocess_quantity(row_data[column_headers.index(quantity_column)]),
+                stock_limit_column: preprocess_stock_limit(row_data[column_headers.index(stock_limit_column)])
+            } for row_data in rows[1:]}
+            
             inventory_table = app_tables.inventory.search()
             for row in inventory_table:
                 item_number = row[item_number_column]
                 if item_number in data_dict:
-                    row[cost_column] = data_dict[item_number]
-                    row.update()  
+                    new_cost = data_dict[item_number][cost_column]
+                    new_quantity = data_dict[item_number][quantity_column]
+                    new_stock_limit = data_dict[item_number][stock_limit_column]
+                    
+                    row[cost_column] = str(new_cost)  # Convert new_cost to string before updating
+                    row[quantity_column] = new_quantity
+                    row[stock_limit_column] = new_stock_limit
+                    
+                    row.update()
+
+    return "Update completed"
 
 
 @anvil.server.callable

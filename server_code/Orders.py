@@ -107,7 +107,7 @@ def calculate_quantity_difference():
             else:
                 app_tables.inventory.add_row(item)
 
-            # Calculate subtotal
+            
             cost = item.get('Cost', '').replace('$', '')
             quantity_difference = item.get('quantity_difference')
 
