@@ -29,7 +29,7 @@ class Data_upload(Data_uploadTemplate):
     
   def update_prices_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    anvil.server.call('update_prices', file)
+    anvil.server.call('update_prices_quantity', file)
     open_form('Home')
     
   def add_to_inventory_button_click(self, **event_args):

@@ -37,7 +37,7 @@ def import_csv(file):
 
 
 @anvil.server.callable
-def update_prices(file):
+def update_prices_quantity(file):
     with anvil.media.TempFile(file) as temp_file:
         with open(temp_file, "r", encoding='latin-1') as f:
             csv_data = f.readlines()
@@ -46,16 +46,16 @@ def update_prices(file):
             item_number_column = "Item_number"
             cost_column = "Cost"
             quantity_column = "Quantity"
-            stock_limit_column = "stock_limit"  # New stock_limit column name
+            stock_limit_column = "stock_limit"  
             
             def preprocess_cost(cost_str):
-                return cost_str.replace('$', '')  # Remove '$'
+                return cost_str.replace('$', '')  
             
             def preprocess_quantity(quantity_str):
-                return int(quantity_str) if quantity_str else 0  # Convert to int, handle empty strings
+                return int(quantity_str) if quantity_str else 0  
             
             def preprocess_stock_limit(limit_str):
-                return int(limit_str) if limit_str else 0  # Convert to int, handle empty strings
+                return int(limit_str) if limit_str else 0  
             
             data_dict = {row_data[column_headers.index(item_number_column)]: {
                 cost_column: preprocess_cost(row_data[column_headers.index(cost_column)]),
@@ -70,11 +70,13 @@ def update_prices(file):
                     new_cost = data_dict[item_number][cost_column]
                     new_quantity = data_dict[item_number][quantity_column]
                     new_stock_limit = data_dict[item_number][stock_limit_column]
-                    
-                    row[cost_column] = str(new_cost)  # Convert new_cost to string before updating
+                  
+                    new_total =  "${:.2f}".format(float(new_cost) * new_quantity)
+            
+                    row[cost_column] = str(new_cost)
                     row[quantity_column] = new_quantity
                     row[stock_limit_column] = new_stock_limit
-                    
+                    row["Total"] = new_total
                     row.update()
 
     return "Update completed"
