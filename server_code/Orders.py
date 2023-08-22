@@ -48,7 +48,7 @@ def send_pdf_email():
     home_group = user['homegroup']
     anvil.email.send(
         from_name="GHASC LITERATURE",
-        to=[user_email, "literature@georgianheartlandna.org"],
+        to=[user_email, "irwin36@gmail.com"],
         subject="GHASC ORDER",
         text="Thank you for your order.",
         attachments=PDFRenderer(filename=f'{home_group} Order {date}').render_form('Order_pdf')
@@ -60,7 +60,7 @@ def send_pdf_email():
 def send_reorder_email(): 
     anvil.email.send(
         from_name="GHASC LITERATURE",
-        to=["literature@georgianheartlandna.org", "irwin36@gmail.com"],
+        to=["irwin36@gmail.com"],
         subject="Georgian Heartland Literature order",
         text="Thank you for your service.",
         attachments=PDFRenderer(filename=f'Georgian Heartland Literature order {date}').render_form('Reorder_pdf')
