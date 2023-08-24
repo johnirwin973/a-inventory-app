@@ -114,7 +114,7 @@ components:
       - {id: LMUZEE, title: Description, data_key: Description, $$hashKey: 'object:441299'}
       - {id: FWMUIF, title: Item Number, data_key: Item_number, $$hashKey: 'object:441300'}
       - {id: ULJRLL, title: Cost, data_key: Cost, $$hashKey: 'object:441301'}
-      - {id: UYCPTV, title: Quantity, data_key: quantity_difference, $$hashKey: 'object:441306'}
+      - {id: UYCPTV, title: Quantity, data_key: quantity_to_order, $$hashKey: 'object:441306'}
       - {id: SDJXEI, title: Subtotal, data_key: subtotal, $$hashKey: 'object:441307'}
       auto_header: true
       tooltip: ''

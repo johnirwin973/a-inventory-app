@@ -21,6 +21,8 @@ class Inventory_page(Inventory_pageTemplate):
       download(pdf)
       open_form('Home')
 
+    
+
  
         
 

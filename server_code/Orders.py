@@ -97,19 +97,19 @@ def calculate_quantity_difference():
 
         if quantity is not None and stock_limit is not None and quantity > 0:
             difference = stock_limit - quantity
-            item['quantity_difference'] = difference
+            item['quantity_to_order'] = difference
 
             # Check if the item exists in the inventory data table
             reorder_item = app_tables.inventory.get(Item_number=item['Item_number'])
             if reorder_item:
-                reorder_item['quantity_difference'] = difference
+                reorder_item['quantity_to_order'] = difference
                 reorder_item.update()
             else:
                 app_tables.inventory.add_row(item)
 
             
             cost = item.get('Cost', '').replace('$', '')
-            quantity_difference = item.get('quantity_difference')
+            quantity_difference = item.get('quantity_to_order')
 
             if quantity_difference is not None and cost != '':
                 subtotal = float(cost) * quantity_difference

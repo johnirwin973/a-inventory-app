@@ -12,7 +12,7 @@ class Reorder_pdf(Reorder_pdfTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.repeating_panel_1.items = app_tables.inventory.search(quantity_difference=q.greater_than(0))
+    self.repeating_panel_1.items = app_tables.inventory.search(quantity_to_order=q.greater_than(0))
     self.calculate_reorder_total()
     
     current_time = datetime.utcnow()

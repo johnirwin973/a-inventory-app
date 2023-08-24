@@ -73,4 +73,9 @@ components:
     name: sales_total
     layout_properties: {grid_position: 'OSHNBU,ASSMLE'}
     data_bindings: []
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_1
+  layout_properties: {grid_position: 'QTTMYK,SJLPJR'}
+  components: []
 is_package: true

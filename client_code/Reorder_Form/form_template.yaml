@@ -122,7 +122,7 @@ components:
       - {id: PQAULX, title: Description, data_key: Description, $$hashKey: 'object:435994'}
       - {id: QPZEHP, title: Item Number, data_key: Item_number, $$hashKey: 'object:435995'}
       - {id: GHBLMU, title: Cost, data_key: Cost, $$hashKey: 'object:435996'}
-      - {id: HJTUOD, title: Quantity, data_key: quantity_difference, $$hashKey: 'object:436023'}
+      - {id: HJTUOD, title: Quantity, data_key: quantity_to_order, $$hashKey: 'object:436023'}
       - {id: GFRUGG, title: Subtotal, data_key: subtotal, $$hashKey: 'object:436002'}
       - {id: JOQCYK, title: Stock Limit, data_key: stock_limit, $$hashKey: 'object:436022'}
       auto_header: true

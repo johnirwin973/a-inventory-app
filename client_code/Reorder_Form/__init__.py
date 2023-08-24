@@ -14,7 +14,7 @@ class Reorder_Form(Reorder_FormTemplate):
         self.init_components(**properties)
         anvil.server.call('calculate_quantity_difference')
         self.calculate_reorder_total()
-        self.repeating_panel_1.items = app_tables.inventory.search(quantity_difference=q.greater_than(0))
+        self.repeating_panel_1.items = app_tables.inventory.search(quantity_to_order=q.greater_than(0))
         current_time = datetime.utcnow()
         gmt_minus4_time = current_time - timedelta(hours=4)
         formatted_date = gmt_minus4_time.strftime("%b %d %Y %H:%M")
@@ -79,7 +79,7 @@ class Reorder_Form(Reorder_FormTemplate):
       inventory_table = app_tables.inventory.search()
       for row in inventory_table:
         # Get the quantity difference for the current row
-          quantity_difference = row['quantity_difference']
+          quantity_difference = row['quantity_to_order']
         
         # Get the current quantity for the row
           current_quantity = row['Quantity']
