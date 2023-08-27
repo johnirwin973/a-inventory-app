@@ -20,7 +20,7 @@ class Inventory(InventoryTemplate):
         else:
             self.label_error.text = "Out of stock"
     else:
-        self.label_error.text = "Out of stock"  # If 'Quantity' column not present in the item.
+        self.label_error.text = "Out of stock"  
 
   def add_to_cart_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -52,17 +52,13 @@ class Inventory(InventoryTemplate):
 
             if available_quantity is not None:
                 if desired_quantity <= available_quantity:
-                    #message = f"Quantity available: {available_quantity}. Order placed for {desired_quantity} items."
-                    #alert(message)
                     cost_without_symbol = Cost.replace('$', '')  # Remove dollar sign
                     cost_without_symbol = cost_without_symbol.replace(',', '')  # Remove commas if present
                     item_cost = float(cost_without_symbol)
                     subtotal = item_cost * desired_quantity
                     formatted_subtotal = f"${subtotal:.2f}"
-                     # Check if the item is already in the Orders table
                     orders = app_tables.orders.search(Item_Number=Item_Number)
                     if len(orders) > 0:
-                        # Item already exists, update the quantity and subtotal
                         existing_order = orders[0]
                         existing_quantity = existing_order['Quantity']
                         existing_subtotal = existing_order['subtotal']

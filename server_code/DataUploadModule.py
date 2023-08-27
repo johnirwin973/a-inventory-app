@@ -15,6 +15,7 @@ def import_csv(file):
             csv_data = f.readlines()
             rows = [row.strip().split(",") for row in csv_data]
             column_headers = rows[0]
+            Description = "Description"
             item_number_column = "Item_number"  
             cost_column = "Cost" 
             image_column = "Image"  
