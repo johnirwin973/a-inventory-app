@@ -1,0 +1,30 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"AMSZBX":40,"NHTXQZ":10}'}
+components:
+- type: TextBox
+  properties: {}
+  name: Quantity_box
+  layout_properties: {grid_position: 'QDXKHO,AMSZBX'}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:arrow-up'}
+  name: up_button
+  layout_properties:
+    col_widths: {}
+    grid_position: QDXKHO,NHTXQZ IXVBEU,CMVILY
+  event_bindings: {click: up_button_click}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:arrow-down'}
+  name: down_button
+  layout_properties:
+    col_widths: {}
+    grid_position: QDXKHO,NHTXQZ OXWKCL,LVWWXS
+  event_bindings: {click: down_button_click}
+is_package: true
+custom_component: true

@@ -2,15 +2,6 @@ container:
   type: DataRowPanel
   event_bindings: {}
 components:
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: Quantity_box
-  layout_properties: {column: AMEIFS}
-  data_bindings:
-  - {property: text, code: 'self.item[''Quantity'']', writeback: true}
 - type: Label
   properties: {}
   name: subtotal_label
@@ -51,4 +42,13 @@ components:
   name: delete_button
   layout_properties: {column: TBBDOX}
   event_bindings: {click: delete_button_click}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: Quantity_box
+  layout_properties: {column: AMEIFS}
+  data_bindings:
+  - {property: text, code: 'self.item[''Quantity'']', writeback: true}
 is_package: true

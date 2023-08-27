@@ -22,7 +22,7 @@ components:
       - {id: ZGNOVV, title: Cost, data_key: Cost, $$hashKey: 'object:14443'}
       - {id: WMWFHR, title: Item Number, data_key: Item_number, $$hashKey: 'object:14444'}
       - {id: AMEIFS, title: Quantity, data_key: Quantity, $$hashKey: 'object:14445',
-        width: 124, expand: false}
+        width: 161, expand: false}
       - {id: DURUKB, title: Subtotal, data_key: Subtotal, $$hashKey: 'object:14446'}
       - {id: TBBDOX, title: '', data_key: column_1, $$hashKey: 'object:36402'}
       auto_header: true
