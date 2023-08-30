@@ -32,4 +32,16 @@ components:
     properties: {}
     name: flexer_1
     layout_properties: {grid_position: 'ZGTGLD,OCFPOR'}
+- type: DataRowPanel
+  properties: {}
+  name: row_panel_1
+  layout_properties: {grid_position: 'CWXCXT,QUEJEY'}
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Show More, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: show_more_button
+  layout_properties: {grid_position: 'NXWCAU,KESBPL'}
+  event_bindings: {click: show_more_button_click}
 is_package: true

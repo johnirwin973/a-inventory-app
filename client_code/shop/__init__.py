@@ -32,3 +32,10 @@ class shop(shopTemplate):
       self.flexer_1.clear()  
       for p in filtered_products:
            self.flexer_1.add_component(Inventory(item=p))
+
+    def show_more_button_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      pass
+
+
+
