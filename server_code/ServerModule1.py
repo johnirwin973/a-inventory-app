@@ -7,7 +7,9 @@ import anvil.server
 import anvil.pdf
 from anvil.pdf import PDFRenderer
 
-  
+
+
+
 @anvil.server.callable
 def update_quantity(item_number, quantity_purchased):
     item = app_tables.inventory.get(Item_number=item_number)

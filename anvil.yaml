@@ -1,4 +1,5 @@
 correct_dependency_ids: {}
+scheduled_tasks: []
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
