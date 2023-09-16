@@ -63,13 +63,13 @@ class Admin_Page(Admin_PageTemplate):
   def open_inventory_page(self, **event_args):
         """Open Inventory page in content panel"""
         self.content_panel.clear()
-        inventory_page = Inventory_page()  # Create an instance of the inventory form
+        inventory_page = Inventory_page()
         self.content_panel.add_component(inventory_page)
 
   def open_reorder_page(self, **event_args):
         """Open Inventory page in content panel"""
         self.content_panel.clear()
-        reorder_page = Reorder_Form()  # Create an instance of the inventory form
+        reorder_page = Reorder_Form()
         self.content_panel.add_component(reorder_page)
   
     
@@ -82,37 +82,37 @@ class Admin_Page(Admin_PageTemplate):
   def open_keytags_form(self, **event_args):
         """Open KeyTags form in content panel"""
         self.content_panel.clear()
-        keys_form = KeyTags()  # Create an instance of the KeyTags form
+        keys_form = KeyTags()
         self.content_panel.add_component(keys_form)
 
   def open_service_items(self, **event_args):
         """Open Service Items form in content panel"""
         self.content_panel.clear()
-        service_form = service_items()  # Create an instance of the service_items form
+        service_form = service_items()
         self.content_panel.add_component(service_form)
 
   def open_special_items(self, **event_args):
         """Open Specialty Items form in content panel"""
         self.content_panel.clear()
-        special_form = special_items()  # Create an instance of the specialty_items form
+        special_form = special_items()
         self.content_panel.add_component(special_form)
 
   def open_media(self, **event_args):
         """Open Multimedia form in content panel"""
         self.content_panel.clear()
-        media_form = Multi_media()  # Create an instance of the Multi Media form
+        media_form = Multi_media() 
         self.content_panel.add_component(media_form)
 
   def open_upload(self, **event_args):
         """Open Data Upload form in content panel"""
         self.content_panel.clear()
-        upload_form = Data_upload()  # Create an instance of the Data_upload form
+        upload_form = Data_upload()
         self.content_panel.add_component(upload_form)
 
   def open_tri(self, **event_args):
         """Open Tri Plate form in content panel"""
         self.content_panel.clear()
-        tri_form = Tri_Laser()  # Create an instance of the Tri_Laser form
+        tri_form = Tri_Laser()
         self.content_panel.add_component(tri_form)
 
   

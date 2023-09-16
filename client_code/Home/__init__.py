@@ -14,8 +14,8 @@ class Home(HomeTemplate):
     def admin_link_click(self, **event_args):
       """This method is called when the link is clicked"""
       if anvil.users.get_user():
-          self.open_admin()  # Open Shop form in content panel
-          self.label_1.text = 'Admin'  # Update label text with form name
+          self.open_admin()  
+          self.label_1.text = 'Admin'  
       else:
           alert('You must be logged as admin in to access admin.')
       
@@ -29,16 +29,16 @@ class Home(HomeTemplate):
     def shop_link_click(self, **event_args):
         """This method is called when the link is clicked"""
         if anvil.users.get_user():
-            self.open_shop()  # Open Shop form in content panel
-            self.label_1.text = 'Shop'  # Update label text with form name
+            self.open_shop()  
+            self.label_1.text = 'Shop'  
         else:
             alert('You must be logged in to access the shop.')
           
     def cart_link_click(self, **event_args):
       """This method is called when the link is clicked"""
       if anvil.users.get_user():
-            self.open_cart()  # Open Shop form in content panel
-            self.label_1.text = 'Shopping Cart'  # Update label text with form name
+            self.open_cart()  
+            self.label_1.text = 'Shopping Cart' 
       else:
             alert('You must be logged in to access the shopping Cart.')
 
@@ -64,7 +64,7 @@ class Home(HomeTemplate):
       """This method is called when the Link is shown on the screen"""
       is_admin = anvil.server.call('check_admin')
       if not is_admin:
-          self.admin_link.visible = False  # Hide the object when not admin
+          self.admin_link.visible = False 
 
 
 
