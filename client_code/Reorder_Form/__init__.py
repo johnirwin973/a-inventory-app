@@ -12,7 +12,7 @@ class Reorder_Form(Reorder_FormTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
-        anvil.server.call('calculate_quantity_difference')
+        anvil.server.call_s('calculate_quantity_difference')
         self.calculate_reorder_total()
         self.repeating_panel_1.items = app_tables.inventory.search(quantity_to_order=q.greater_than(0))
         current_time = datetime.utcnow()
@@ -67,8 +67,8 @@ class Reorder_Form(Reorder_FormTemplate):
       """This method is called when the button is clicked"""
       items = self.repeating_panel_1.items
       if any(item['item_name'] for item in items):
-          anvil.server.call('send_reorder_email')
-          anvil.server.call('create_reorder_pdf')
+          anvil.server.call_s('send_reorder_email')
+          anvil.server.call_s('create_reorder_pdf')
           open_form('Home')
       else:
           alert("Cannot submit reorder. No items in list.")

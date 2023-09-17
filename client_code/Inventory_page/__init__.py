@@ -17,7 +17,7 @@ class Inventory_page(Inventory_pageTemplate):
     
     def download_button_click(self, **event_args):
       """This method is called when the button is clicked"""
-      pdf = anvil.server.call('inventory_pdf')
+      pdf = anvil.server.call_s('inventory_pdf')
       download(pdf)
       open_form('Home')
 

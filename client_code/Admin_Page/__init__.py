@@ -21,7 +21,7 @@ class Admin_Page(Admin_PageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    anvil.server.call('calculate_quantity_difference')
+    anvil.server.call_s('calculate_quantity_difference')
     
     self.drop_down.items = ["Inventory List", "Place Regional order", "Books/Booklets", "Pamphlets", "Key Tags, Chips & Medallions",
                                 "Service Items", "Specialty Items", "Multimedia Products",

@@ -26,6 +26,6 @@ class Tri_Laser(Tri_LaserTemplate):
 
   def search_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.repeating_panel_1.items = anvil.server.call('search_Tri_items', self.search_box.text)
+    self.repeating_panel_1.items = anvil.server.call_s('search_Tri_items', self.search_box.text)
 
 

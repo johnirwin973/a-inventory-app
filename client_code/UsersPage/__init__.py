@@ -42,8 +42,8 @@ class UsersPage(UsersPageTemplate):
      self.label_error.visible = True
      return
     self.update_user_info()  
-    anvil.server.call('create_order_pdf')
-    anvil.server.call('send_pdf_email')
+    anvil.server.call_s('create_order_pdf')
+    anvil.server.call_s('send_pdf_email')
     rows = app_tables.orders.search()  
     for row in rows:
             item_number = row['Item_Number']
@@ -65,7 +65,7 @@ class UsersPage(UsersPageTemplate):
                       inventory_item['Total'] = f"${inventory_total - (quantity * cost):.2f}"
 
                       inventory_item.update()
-                      anvil.server.call('delete_table_rows', 'Orders')
+                      anvil.server.call_s('delete_table_rows', 'Orders')
                    else:
                       message = f"Insufficient quantity for item {item_number}. Only {available_quantity} items available."
                       alert(message)

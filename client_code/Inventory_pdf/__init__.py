@@ -20,4 +20,4 @@ class Inventory_pdf(Inventory_pdfTemplate):
 
 
         self.repeating_panel_1.items = app_tables.inventory.search(Quantity=q.greater_than(0))
-        self.sales_total.text = anvil.server.call('update_total')
+        self.sales_total.text = anvil.server.call_s('update_total')

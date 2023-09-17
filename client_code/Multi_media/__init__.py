@@ -15,8 +15,6 @@ class Multi_media(Multi_mediaTemplate):
 
   def search_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.repeating_panel_1.items = anvil.server.call('search_media_pro', self.search_box.text)
+    self.repeating_panel_1.items = anvil.server.call_s('search_media_pro', self.search_box.text)
 
-  def search_box_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    self.repeating_panel_1.items = anvil.server.call('search_media_pro', self.search_box.text)
+  

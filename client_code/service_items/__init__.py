@@ -15,6 +15,6 @@ class service_items(service_itemsTemplate):
 
   def search_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.repeating_panel_1.items = anvil.server.call('search_service_items', self.search_box.text)
+    self.repeating_panel_1.items = anvil.server.call_s('search_service_items', self.search_box.text)
 
  

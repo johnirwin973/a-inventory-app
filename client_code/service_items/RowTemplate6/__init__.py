@@ -47,9 +47,9 @@ class RowTemplate6(RowTemplate6Template):
 
   def update_stock_limit(self):
     update_limit = self.stock_limit_box.text
-    item_number = self.item_number_label.text # Replace with the item number you want to reference
+    item_number = self.item_number_label.text
 
-    # Find the row in the inventory table with the matching item number
+  
     inventory_item = app_tables.inventory.get(Item_number=item_number)
 
     if inventory_item:

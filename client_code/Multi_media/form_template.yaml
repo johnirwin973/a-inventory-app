@@ -16,7 +16,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: UMNAXR,TLFEQI
-    event_bindings: {pressed_enter: search_box_pressed_enter}
+    event_bindings: {}
   - type: Button
     properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: SEARCH, font_size: null, font: '', spacing_above: small,

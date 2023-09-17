@@ -11,7 +11,7 @@ class Data_upload(Data_uploadTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     
-    has_privileges = anvil.server.call('check_privileges')
+    has_privileges = anvil.server.call_s('check_privileges')
     if not has_privileges:
         self.full_inventory.visible = False
         
@@ -24,12 +24,12 @@ class Data_upload(Data_uploadTemplate):
     
 
   def full_inventory_change(self, file, **event_args):
-    anvil.server.call('import_csv', file)
+    anvil.server.call_s('import_csv', file)
     open_form('Home')
     
   def update_prices_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    anvil.server.call('update_prices_quantity', file)
+    anvil.server.call_s('update_prices_quantity', file)
     open_form('Home')
     
   def add_to_inventory_button_click(self, **event_args):
@@ -48,7 +48,7 @@ class Data_upload(Data_uploadTemplate):
         image = self.image_upload.file
 
         # Insert a new row into the "Inventory" table
-        anvil.server.call('add_inventory_item', category, description, item_number, cost, image)
+        anvil.server.call_s('add_inventory_item', category, description, item_number, cost, image)
         anvil.alert("Upload is complete. Item added to inventory.")
         self.clear_info()
     
@@ -103,7 +103,7 @@ class Data_upload(Data_uploadTemplate):
       return
     item_number = self.image_number.text
     new_image = self.image_update.file
-    success = anvil.server.call('update_inventory_image', item_number, new_image)
+    success = anvil.server.call_s('update_inventory_image', item_number, new_image)
 
     if success:
         anvil.alert("Image updated successfully.")
@@ -113,7 +113,7 @@ class Data_upload(Data_uploadTemplate):
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     item_number = self.Delete_item_box.text 
-    result = anvil.server.call('delete_item_row', item_number)  
+    result = anvil.server.call_s('delete_item_row', item_number)  
 
     if result:
         self.data_grid_1.items = []  
@@ -122,7 +122,7 @@ class Data_upload(Data_uploadTemplate):
   def find_button_click(self, **event_args):
      """This method is called when the button is clicked"""
      item_number = self.Delete_item_box.text
-     items_found = anvil.server.call('search_inventory', item_number)
+     items_found = anvil.server.call_s('search_inventory', item_number)
     
      self.repeating_panel_1.items = items_found
     

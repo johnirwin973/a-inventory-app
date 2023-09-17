@@ -71,7 +71,7 @@ class Inventory(InventoryTemplate):
                         existing_order['subtotal'] = f"${new_subtotal:.2f}"
                         existing_order.update()
                     else:
-                        anvil.server.call('add_order', Description, Item_Number, Cost, Quantity, formatted_subtotal)  # Pass subtotal as an argument
+                        anvil.server.call_s('add_order', Description, Item_Number, Cost, Quantity, formatted_subtotal)  # Pass subtotal as an argument
                     self.shop_quantity_box.text = ""
                 else:
                     message = f"Insufficient quantity. Only {available_quantity} items available."

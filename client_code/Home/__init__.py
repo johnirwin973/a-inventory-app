@@ -21,7 +21,7 @@ class Home(HomeTemplate):
       
     def logout_link_click(self, **event_args):
         """This method is called when the link is clicked"""
-        anvil.server.call('delete_table_rows', 'Orders')
+        anvil.server.call_s('delete_table_rows', 'Orders')
         anvil.users.logout()
         open_form('LogIn')
         pass
@@ -62,7 +62,7 @@ class Home(HomeTemplate):
 
     def admin_link_show(self, **event_args):
       """This method is called when the Link is shown on the screen"""
-      is_admin = anvil.server.call('check_admin')
+      is_admin = anvil.server.call_s('check_admin')
       if not is_admin:
           self.admin_link.visible = False 
 

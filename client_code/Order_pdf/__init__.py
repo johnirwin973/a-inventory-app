@@ -25,6 +25,6 @@ class Order_pdf(Order_pdfTemplate):
     self.email_box.text = user['email']
     self.phone_box.text = user['phone']
     self.repeating_panel_1.items = app_tables.orders.search()
-    self.sales_total.text = anvil.server.call('update_order_total')
+    self.sales_total.text = anvil.server.call_s('update_order_total')
    
     
